@@ -1,26 +1,26 @@
 variable "username" {
-  description = "The username for the DB master user"
+  description = "The username for Proxmox"
   type        = string
   sensitive = false
-  default = ""
+  default = "root@pam"
   
 }
 variable "password" {
-  description = "The password for the DB master user"
+  description = "The password for Proxmox"
   type        = string
   sensitive = true
   default = ""
 }
 
 variable "proxmox-host" {
-  description = "The username for the DB master user"
+  description = "The Proxmox server"
   type        = string
-  default = "192.168.3.110"
+  default = "10.0.0.65"
   
 }
 
 variable "pvt_key" {
-  default = "~/.ssh/proxk3s"
+  default = "$HOME/proxk3s"
 }
 
 variable "num_k3s_masters" {
@@ -40,5 +40,5 @@ variable "num_k3s_nodes_mem" {
 }
 
 variable "tamplate_vm_name" {
- default = "ubuntu-2004-cloudinit-template"
+ default = "ubuntu-hirsute-cloudinit-template"
 }
